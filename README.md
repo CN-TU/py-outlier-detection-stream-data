@@ -8,7 +8,7 @@ April, 2019
 Félix Iglesias, TU Wien
 
 
-**** Summary ****
+## Summary 
 The following experiments use the CICIDS2017 dataset for the evaluation of the SDO+RF methodolgy for
 the detection of streaming emerging new classes and anomalies. The evaluation consists of two different
 scenarios: "lpk" (limited pre-knowledge) and "cpk" (comprehensive pre-knowledge). In every scenario the 
@@ -17,9 +17,10 @@ classes, the test subset contains normal traffic and 16 attack classes. The SENC
 used as benchmark for comparison.
 *****************
 
-**** Requirements ****
+## Requirements 
 1. The CICIDS2017 dataset belongs to the Canadian Institute for Cybersecurity. It can be obtained on demand
 in the following link:
+
 https://www.unb.ca/cic/datasets/ids-2017.html
 
 2. CICIDS2017 is provided as pcaps and a ground truth file. We extracted AGM features with a feature extractor 
@@ -31,10 +32,13 @@ We provide a "sample.csv" with the names of the used features and 5 samples.
 The configuraton of the AGM vector extraction is: [flow-key: sourceIPaddress, observation_time: 10 seconds]
 
 Features are:
+
+```
 <flowStartSeconds, sourceIPAddress, distinct(destinationIPAddress), mode(destinationIPAddress), modeCount(destinationIPAddress), distinct(sourceTransportPort),
 mode(sourceTransportPort), modeCount(sourceTransportPort), distinct(destinationTransportPort), mode(destinationTransportPort), modeCount(destinationTransportPort),
 distinct(protocolIdentifier), mode(protocolIdentifier), modeCount(protocolIdentifier) ,distinct(ipTTL),mode(ipTTL), modeCount(ipTTL), distinct(_tcpFlags),
 mode(_tcpFlags), modeCount(_tcpFlags), distinct(octetTotalCount), mode(octetTotalCount), modeCount(octetTotalCount), packetTotalCount, Attack, Label>
+```
 
 where,
 "Attack": text label for attack families or normal traffic, e.g., "Normal", "Botnet:ARES", "Brute Force:FTP-Patator"
@@ -43,13 +47,17 @@ where,
 We call the preprocessed dataset in CSV format as follows: "Full_AGM.csv"
 
 3. SDO can be downloaded from here:
+
 https://github.com/CN-TU/sdo-matlab
 
 4. SENCForest can be downloaded from here:
+
 http://lamda.nju.edu.cn/code_sencForest.ashx?AspxAutoDetectCookieSupport=1
+
 **********************
 
-**** Instructions for replication ****
+## Instructions for replication 
+
 0. Open a terminal
 
 1. Extract the files in the working folder
@@ -86,7 +94,8 @@ At the end of the process, performance indices are printed out in the matlab com
 **************************************
 
 
-**** Included files ****
+## Included files 
+
 "README.txt",                       this file
 "sample.csv",                       example of the CICIDS2017 formatted according to the AGM vector [flow-key: sourceIPaddress, 
                                     observation_time: 10 seconds]
@@ -107,8 +116,10 @@ At the end of the process, performance indices are printed out in the matlab com
 
 [cpk]                               folder for the "comprehensive pre-knowledge experiments"
     ...                             Same as [lpk]
+
 ************************
 
 
 More information about our research at the CN-Group TU Wien:
+
 https://www.cn.tuwien.ac.at/
