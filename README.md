@@ -15,7 +15,6 @@ scenarios: "lpk" (limited pre-knowledge) and "cpk" (comprehensive pre-knowledge)
 dataset is split into training and test subsets. The "training" subset contains normal traffic and 11 attack 
 classes, the test subset contains normal traffic and 16 attack classes. The SENCForest algorithm is
 used as benchmark for comparison.
-*****************
 
 ## Requirements 
 1. The CICIDS2017 dataset belongs to the Canadian Institute for Cybersecurity. It can be obtained on demand
@@ -54,7 +53,6 @@ https://github.com/CN-TU/sdo-matlab
 
 http://lamda.nju.edu.cn/code_sencForest.ashx?AspxAutoDetectCookieSupport=1
 
-**********************
 
 ## Instructions for replication 
 
@@ -91,12 +89,12 @@ At the end of the process, performance indices are printed out in the matlab com
 7. Go to the [lpk/iforest] or [cpk/ifores] folder, run "init_simulation_SF" 
 
 At the end of the process, performance indices are printed out in the matlab command window
-**************************************
 
 
 ## Included files 
 
 "README.txt",                       this file
+
 "sample.csv",                       example of the CICIDS2017 formatted according to the AGM vector [flow-key: sourceIPaddress, 
                                     observation_time: 10 seconds]
                                     header and 5 flows.
@@ -117,7 +115,6 @@ At the end of the process, performance indices are printed out in the matlab com
 [cpk]                               folder for the "comprehensive pre-knowledge experiments"
     ...                             Same as [lpk]
 
-************************
 
 
 More information about our research at the CN-Group TU Wien:
