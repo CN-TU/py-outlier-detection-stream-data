@@ -84,7 +84,7 @@ At the end of the process, performance indices are printed out in the matlab com
 
 8. Add the [SENCForest] to the Path (MATLAB) 
 
-7. Go to the [lpk/iforest] or [cpk/ifores] folder, run "init_simulation_SF" 
+7. Go to the [lpk/sencforest] or [cpk/sencforest] folder, run "init_simulation_SF" 
 
 At the end of the process, performance indices are printed out in the matlab command window
 
