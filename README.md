@@ -23,7 +23,7 @@ https://www.unb.ca/cic/datasets/ids-2017.html
 
 2. CICIDS2017 is provided as pcaps and a ground truth file. We extracted AGM features with a feature extractor 
 based on Golang. Our feature extractor is pending publication (shortly), but it can be requested on demand by
-email here: felix.iglesias(at)nt.tuwien.ac.at. In any case, features can be extracted with any feature extractor, 
+email here: **felix.iglesias(at)nt.tuwien.ac.at**. In any case, features can be extracted with any feature extractor, 
 e.g., tshark. 
 
 We provide a "sample.csv" with the names of the used features and 5 samples. 
