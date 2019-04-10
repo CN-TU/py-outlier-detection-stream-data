@@ -32,10 +32,10 @@ The configuraton of the AGM vector extraction is: [flow-key: sourceIPaddress, ob
 Features are:
 
 ```
-<flowStartSeconds, sourceIPAddress, distinct(destinationIPAddress), mode(destinationIPAddress), modeCount(destinationIPAddress), distinct(sourceTransportPort),
+flowStartSeconds, sourceIPAddress, distinct(destinationIPAddress), mode(destinationIPAddress), modeCount(destinationIPAddress), distinct(sourceTransportPort),
 mode(sourceTransportPort), modeCount(sourceTransportPort), distinct(destinationTransportPort), mode(destinationTransportPort), modeCount(destinationTransportPort),
 distinct(protocolIdentifier), mode(protocolIdentifier), modeCount(protocolIdentifier) ,distinct(ipTTL),mode(ipTTL), modeCount(ipTTL), distinct(_tcpFlags),
-mode(_tcpFlags), modeCount(_tcpFlags), distinct(octetTotalCount), mode(octetTotalCount), modeCount(octetTotalCount), packetTotalCount, Attack, Label>
+mode(_tcpFlags), modeCount(_tcpFlags), distinct(octetTotalCount), mode(octetTotalCount), modeCount(octetTotalCount), packetTotalCount, Attack, Label
 ```
 
 where,
