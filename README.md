@@ -96,17 +96,17 @@ File | Description
 README.txt | this file
 sample.csv | example of the CICIDS2017 formatted according to the AGM vector [flow-key: sourceIPaddress, observation_time: 10 seconds] header and 5 flows.
 split_data.py | python script to prepare training and test splits with normal traffic and 11 attack families in the training subset and normal traffic and 16 attack families in the test split.
-[lpk] | folder for the "limited pre-knowledge experiments"
-[lpk/sdo-rf] | folder with scripts for the sdo-rf method
+[lpk] | folder for the "limited pre-knowledge" experiments
+[lpk/sdo-rf] | folder with scripts for using the SDO+RF method in SENCA experiments
 lpk/sdo-rf/init_simulation.m  |  script for runing experiments with SDO+RF
 lpk/sdo-rf/init_simulation_fast.m  | script for runing experiments with SDO+RF (fast mode)
 lpk/sdo-rf/SENCA_performance.m  |  function for evaluation the SDO+RF performance
 lpk/sdo-rf/new_class_detector.m  | function implementing the new class detectino for the the Final Class Evaluator
 lpk/sdo-rf/optim_param.m  |  script for the parameter optimization of the TreeBagger
-[lpk/sencforest]   | folder with scripts for the sdo-rf method
+[lpk/sencforest]   | folder with scripts for using the SENCForest method in SENCA experiments
 lpk/sencforest/init_simulation_SF.m   | script for runing experiments with SENCForest
 lpk/sencforest/SENCA_performance_SF.m  | function for evaluation the SENCForest performance
-[cpk]  | folder for the "comprehensive pre-knowledge experiments". Contain the same files as [lpk]
+[cpk]  | folder for the "comprehensive pre-knowledge" experiments. Contain the same files as [lpk]
 
 --------
 
