@@ -19,7 +19,6 @@ used as benchmark for comparison.
 ## Requirements 
 1. The CICIDS2017 dataset belongs to the Canadian Institute for Cybersecurity. It can be obtained on demand
 in the following link:
-
 https://www.unb.ca/cic/datasets/ids-2017.html
 
 2. CICIDS2017 is provided as pcaps and a ground truth file. We extracted AGM features with a feature extractor 
@@ -40,17 +39,16 @@ mode(_tcpFlags), modeCount(_tcpFlags), distinct(octetTotalCount), mode(octetTota
 ```
 
 where,
+
 "Attack": text label for attack families or normal traffic, e.g., "Normal", "Botnet:ARES", "Brute Force:FTP-Patator"
+
 "Label": binary label, 1:attack, 0:normal
 
 We call the preprocessed dataset in CSV format as follows: "Full_AGM.csv"
 
-3. SDO can be downloaded from here:
-
-https://github.com/CN-TU/sdo-matlab
+3. SDO can be downloaded from here: https://github.com/CN-TU/sdo-matlab
 
 4. SENCForest can be downloaded from here:
-
 http://lamda.nju.edu.cn/code_sencForest.ashx?AspxAutoDetectCookieSupport=1
 
 
