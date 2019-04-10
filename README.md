@@ -91,13 +91,11 @@ At the end of the process, performance indices are printed out in the matlab com
 
 ## Included files 
 
-"README.txt",                       this file
-
-"sample.csv",                       example of the CICIDS2017 formatted according to the AGM vector [flow-key: sourceIPaddress, 
-                                    observation_time: 10 seconds]
-                                    header and 5 flows.
-"split_data.py"                     python script to prepare training and test splits with normal traffic and 11 attack families in 
-                                    the training subset and normal traffic and 16 attack families in the test split.
+File | Description
+-----|------------- 
+"README.txt" | this file
+"sample.csv" | example of the CICIDS2017 formatted according to the AGM vector [flow-key: sourceIPaddress, observation_time: 10 seconds] header and 5 flows.
+"split_data.py" | python script to prepare training and test splits with normal traffic and 11 attack families in the training subset and normal traffic and 16 attack families in the test split.
 
 [lpk]                               folder for the "limited pre-knowledge experiments"
     [sdo-rf]                        folder with scripts for the sdo-rf method
