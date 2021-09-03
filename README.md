@@ -11,7 +11,7 @@
 
 ### 0. Preparing datasets
 
-**Synthetic datasets** are located within the [datasets/synthetic/] folder. **Real datasets** are not included in order to respect original authory and licenses. They must be downloaded, preprocessed and located in their respective folders within the parent [datasets/real/] folder. The [datasets/srcs/] contains scripts and further instructions to allow preparing the data as used in our experiments. Plase, read the meta-datasets.md document in the [datasets/] folder for additional information.
+**Synthetic datasets** are located within the [datasets/synthetic/] folder. **Real datasets** are not included in order to respect original authory and licenses. They must be downloaded, preprocessed and located in their respective folders within the parent [datasets/real/] folder. The [datasets/srcs/] folder contains scripts and further instructions to allow preparing the data as used in our experiments. Please, read the meta-datasets.md document in the [datasets/] folder for additional information.
 
 ### 1. Replicating experiments
 
