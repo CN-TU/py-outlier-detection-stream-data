@@ -1,9 +1,0 @@
-@RELATION 'YAHOOTS'
-
-@ATTRIBUTE 'att1' real
-@ATTRIBUTE 'att2' real
-@ATTRIBUTE 'att3' real
-@ATTRIBUTE 'class' int
-
-@DATA
-

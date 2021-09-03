@@ -1,9 +1,0 @@
-@relation optout-weka.filters.unsupervised.attribute.NumericToNominal-Rlast
-@attribute 1 numeric
-@attribute 2 numeric
-@attribute 3 numeric
-@attribute 4 numeric
-@attribute 5 numeric
-@attribute class numeric
-
-@data
