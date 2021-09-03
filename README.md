@@ -1,5 +1,5 @@
-#On outlier detection for stream data
-##Instructions for experiment replication
+# On outlier detection for stream data
+## Instructions for experiment replication
 
 **authors:** Felix Iglesias, Alexander Hartl, Tanja Zseby, and Arthur Zimek
 
