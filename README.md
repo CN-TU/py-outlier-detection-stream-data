@@ -13,6 +13,8 @@
 
 **Synthetic datasets** are located within the [datasets/synthetic/] folder. **Real datasets** are not included in order to respect original authory and licenses. They must be downloaded, preprocessed and located in their respective folders within the parent [datasets/real/] folder. The [datasets/srcs/] folder contains scripts and further instructions to allow preparing the data as used in our experiments. Please, read the meta-datasets.md document in the [datasets/] folder for additional information.
 
+If you have problems obtaining, accessing or processing third-party datasets (i.e., "real datasets"), please contact the author of the repository.
+
 ### 1. Replicating experiments
 
 Open a terminal in the current folder. Run:
