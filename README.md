@@ -19,15 +19,15 @@ If you have problems obtaining, accessing or processing third-party datasets (i.
 
 Open a terminal in the current folder. Run:
 
-> $ pyhton3 run_all.py
+> $ python3 run_all.py
 
 Files with results and scores are created in the corresponding folders within [tests/]. **Warning!:** *if executed in a common desktop machine this process can take several days. We recommend using high-performance equipment for this task.*
 
 You can run synthetic and real experiments separately:
 
-> $ pyhton3 run_synthetic.py
+> $ python3 run_synthetic.py
 
-> $ pyhton3 run_real.py
+> $ python3 run_real.py
 
 ### 2. 3D scatter plots (Section 3.1 and Section 6.2)
 
