@@ -5,9 +5,9 @@
 
 **contact:** felix.iglesias@tuwien.ac.at
 
-*Sep., 2021*
+*Oct., 2021*
 
-**Warning!!:** this repository already includes results, logs, figures and tables files as obtained in the original experiments and published in the paper. Executing the scripts below will overwrite such files.
+**Warning!!:** this repository already includes results, logs, figures and tables files as obtained in the original experiments. Executing the scripts below will overwrite such files.
 
 ### 0. Preparing datasets
 
