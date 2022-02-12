@@ -15,6 +15,9 @@
 
 If you have problems obtaining, accessing or processing third-party datasets (i.e., "real datasets"), please contact the author of the repository.
 
+**Synthetic datasets** are also publicly available in **Mendeley**:
+“Data for Evaluation of Stream Data Analysis Algorithms”. Mendeley Data, V1, doi: 10.17632/c43kr4t7h8.1, [https://data.mendeley.com/datasets/c43kr4t7h8/1](https://data.mendeley.com/datasets/c43kr4t7h8/1)
+
 ### 1. Replicating experiments
 
 Open a terminal in the current folder. Run:
