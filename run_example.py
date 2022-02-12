@@ -345,7 +345,7 @@ for idf, filename in enumerate(glob.glob(os.path.join(inpath, '*.arff'))):
     if reverse_class:
         labels[labels>0] = -1
         labels = labels + 1
-    data = np.array(data[:,0:-2], dtype=np.float64)
+    data = np.array(data[:,0:-3], dtype=np.float64)
 
     print("Dataset size:", data.shape)
     training_len=2000
@@ -475,34 +475,6 @@ for idf, filename in enumerate(glob.glob(os.path.join(inpath, '*.arff'))):
         print("-------")
         scbin = sce > th
 
-        cle = clus[training_len:]
-        dee = dens[training_len:]
-
-        if alg=='swknn':
-            idx = sce.argsort()[::-1]
-            sce, cle, dee = sce[idx], cle[idx], dee[idx]
-            sce = sce > Rth
-            sce = sce.astype(np.float)
-
-        s_loc, d_loc = sce, dee
-        loc = performance(s_loc, d_loc)
-        
-        #states = [2, 4]
-        #mask = np.in1d(dee, states)
-        #s_rel, m_rel = sce[mask], cle[mask]
-        #mask = np.in1d(m_rel, states)
-        #s_rel, m_rel = s_rel[mask], m_rel[mask]
-        s_rel, m_rel = sce, np.copy(cle)
-        m_rel[m_rel==2]=-1
-        m_rel[m_rel==1]=-1
-        m_rel[m_rel==3]=1
-        m_rel[m_rel==4]=1
-        m_rel[m_rel==0]=1
-
-        rel = performance(s_rel,m_rel)
-        print(alg, loc, rel, file=open(outpath+'ex_Loc_Rel.txt', "a"))
-        print("Locality: ", loc, ", Relativity: ", rel)
-
         fig = plt.figure(1, figsize=(4, 4), dpi=100,)
         sc = -1/(1+scores[training_len:])
         sc = sc.reshape(-1, 1) 
@@ -556,47 +528,4 @@ img_fin = Image.new("RGB", (400,400), (255, 255, 255))
 img_fin.paste(img_res, (left, top, right, bottom))
 img_fin.save(outpath+'ex_eval.png') 
 
-fig = plt.figure(5, figsize=(4, 4), dpi=100,)
-ax = plt.gca()
-aux=data[training_len:,:]
-caux=clus[training_len:]
-plt.scatter(aux[caux==1,0],aux[caux==1,1], s=1, color='red')
-plt.scatter(aux[caux==2,0],aux[caux==2,1], s=1, color='blue')
-plt.scatter(aux[caux==3,0],aux[caux==3,1], s=1, color='green')
-plt.scatter(aux[caux==4,0],aux[caux==4,1], s=1, color='grey')
-plt.scatter(aux[caux==0,0],aux[caux==0,1], s=1, color='black')
-#plt.scatter(data[training_len:,0],data[training_len:,1], s=1, cmap='Dark2', c=clus[training_len:])
-plt.colorbar(ticks=[np.min(clus[training_len:]), np.max(clus[training_len:])])
-ax.set_xlim((-0.05, 1.01))
-ax.set_ylim((-0.05, 1.06))
-plt.title('test dataset_clusters', fontsize=14)
-plt.savefig(outpath+'ex_test_clusters.png')
-img = Image.open(outpath+'ex_test_clusters.png') 
-left, top, right, bottom = 0, 0, 313, 400
-img_res = img.crop((left, top, right, bottom)) 
-img_res.save(outpath+'ex_test_clusters.png') 
-img_fin = Image.new("RGB", (400,400), (255, 255, 255))
-img_fin.paste(img_res, (left, top, right, bottom))
-img_fin.save(outpath+'ex_test_clusters.png') 
 
-fig = plt.figure(6, figsize=(4, 4), dpi=100,)
-ax = plt.gca()
-aux=data[training_len:,:]
-cdens=dens[training_len:]
-plt.scatter(aux[cdens==1,0],aux[cdens==1,1], s=1, color='red')
-plt.scatter(aux[cdens==2,0],aux[cdens==2,1], s=1, color='green')
-plt.scatter(aux[cdens==3,0],aux[cdens==3,1], s=1, color='blue')
-plt.scatter(aux[cdens==4,0],aux[cdens==4,1], s=1, color='black')
-#plt.scatter(data[training_len:,0],data[training_len:,1], s=1, cmap='Dark2', c=dens[training_len:])
-plt.colorbar(ticks=[np.min(dens[training_len:]), np.max(dens[training_len:])])
-ax.set_xlim((-0.05, 1.01))
-ax.set_ylim((-0.05, 1.06))
-plt.title('test dataset_dens_levs', fontsize=14)
-plt.savefig(outpath+'ex_test_denslevs.png')
-img = Image.open(outpath+'ex_test_denslevs.png') 
-left, top, right, bottom = 0, 0, 313, 400
-img_res = img.crop((left, top, right, bottom)) 
-img_res.save(outpath+'ex_test_denslevs.png') 
-img_fin = Image.new("RGB", (400,400), (255, 255, 255))
-img_fin.paste(img_res, (left, top, right, bottom))
-img_fin.save(outpath+'ex_test_denslevs.png') 
