@@ -1,4 +1,4 @@
-# On outlier detection for stream data
+# Outlier Detection in Stream Data: A Comparison and Evaluation Study
 ## Instructions for experiment replication
 
 **authors:** Felix Iglesias, Alexander Hartl, Tanja Zseby, and Arthur Zimek
