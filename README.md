@@ -5,7 +5,7 @@
 
 **contact:** felix.iglesias@tuwien.ac.at
 
-*Feb., 2022*
+*Dec., 2022*
 
 **Warning!!:** this repository already includes results, logs, figures and tables files as obtained in the original experiments and published in the paper. Executing the scripts below will overwrite such files.
 
