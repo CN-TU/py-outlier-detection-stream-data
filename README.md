@@ -72,10 +72,10 @@ Plots used in the paper are generated in the same folder.
 
 Open a terminal from [evaldatasets/]. Run:
 
-> $ bash run_eval.sh
+> $ bash run_evaldata.sh
 
 The script will create a text file ("datasets_indices.txt") with descriptive information of the datasets. To generate the plot in Section 6.4., summarize phi and rho values of dataset collections (synthetic data) by using the median (use your favorite tool here). Create a file like "ind4plot.txt" with the necessary information -- dataset(s), phi, rho -- and run: 
 
 > $ python3 phi_rho_plot.py ind4plot.txt
 
-This creates the "phi_rot.png" plot.
+This creates the "phi_rot.pdf" plot.

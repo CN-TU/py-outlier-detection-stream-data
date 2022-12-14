@@ -59,6 +59,6 @@ if mtit == 'tts':
 plt.title(chall[-1])
 plt.ylabel(metric, fontsize=14)
 plt.tight_layout()
-plt.savefig(chall[-1]+'_'+metric+'_BP.png')
+plt.savefig(chall[-1]+'_'+metric+'_BP.pdf')
 if show:
     plt.show()
