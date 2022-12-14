@@ -34,6 +34,6 @@ for i, row in df.iterrows():
     baxes.text(x+incx, y+incy, name, fontsize=12)
 
 #print(df)
-plt.savefig('phi_rho.png', dpi = 100)
+plt.savefig('phi_rho.pdf')
 #plt.show()
 
