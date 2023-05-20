@@ -1,0 +1,11 @@
+
+Implementation created by Alexander Hartl, based on:
+
+Emaad Manzoor, Hemank Lamba, Leman Akoglu. Outlier Detection in Feature-Evolving Data Streams. 
+In 24th ACM SIGKDD International Conference on Knowledge Discovery and Data mining (KDD). 2018. 
+
+https://dl.acm.org/doi/10.1145/3219819.3220107
+
+https://cmuxstream.github.io/
+
+
