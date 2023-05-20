@@ -1,38 +1,26 @@
 #!/usr/bin/env python3
 
-# install dependencies to a local subdirectory
-import dependencies
-dependencies.assert_pkgs({
-    'numpy': 'numpy',
-    'pandas': 'pandas',
-    'scipy': 'scipy',
-    'sklearn': 'scikit-learn',
-    'xStream': 'contrib/xStream.tar.bz2',
-    'pysdo': 'https://github.com/CN-TU/pysdo/archive/master.zip',
-    'dSalmon': 'git+https://github.com/CN-TU/dSalmon'
-})
+# checking package dependencies
+from dependencies import check_pkgs
+check_pkgs()
 
 import numpy as np
 import pandas as pd
 
 import sys
 import glob
+import subprocess
 import os
 import re
 import ntpath
-import time
-import subprocess
-import pickle
-import gzip
 from scipy.io.arff import loadarff 
 
-import pysdo
-import indices
+import src.pamsearch as pams
+import src.data as dt
+
 from dSalmon.trees import MTree
 
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
-#from KDEpy import FFTKDE
 import matplotlib.pyplot as plt
 
 import warnings
@@ -69,44 +57,14 @@ reverse_class = (sys.argv[2] == '1')
 
 np.random.seed(0)
 
-#print("\nData folder:",inpath)
-
 res = []
 
 for idf, filename in enumerate(glob.glob(os.path.join(inpath, '*.arff'))):
-    #print("\nData file (.arff)", filename)
-    #print("Data file index: ", idf)
-    m = re.match('.*_([0-9]+).arff', filename)
-    dataset_idx = m.group(1) if m else 0
+    data, labels, timestamps ,_ ,_ = dt.retrieve_data(filename=filename, idf=idf, collection=False, non_predictors=3, reverse_class=reverse_class)
     filename_short = ntpath.basename(filename)
-    arffdata = loadarff(filename)
-    df_data = pd.DataFrame(arffdata[0])
-
-    if(df_data['class'].dtypes == 'object'):
-        df_data['class'] = df_data['class'].map(lambda x: x.decode("utf-8").lstrip('b').rstrip(''))
-    labels = df_data['class'].values
-    labels = np.array(labels, dtype=int)
-    data = df_data.values
-    data = MinMaxScaler().fit_transform(data)
-    timestamps = np.arange(0,data.shape[0])
-    timestamps = timestamps[:,None]
-
-    if reverse_class:
-        labels[labels>0] = -1
-        labels = labels + 1
-    data = np.array(data[:,0:-1], dtype=np.float64)
-
-    #print("Dataset size:", data.shape)
 
     lda = LDA(n_components=1)
     lda_data = lda.fit_transform(data, labels)
-
-    #x0, y0 = FFTKDE(bw='silverman').fit(lda_data[labels==0]).evaluate(200)
-    #x1, y1 = FFTKDE(bw='silverman').fit(lda_data[labels==1]).evaluate(200)
-
-    #plt.fill_between(x0, y0, color="lightpink", alpha=0.5, label='inliers')
-    #plt.fill_between(x1, y1, color="skyblue", alpha=0.5, label='outliers')
-    #plt.legend()
 
     bins = np.linspace(min(lda_data), max(lda_data), 50).flatten().tolist()
     n0, b0, p0 = plt.hist(lda_data[labels==0], bins, density=True, alpha=0.75)
@@ -128,5 +86,4 @@ for idf, filename in enumerate(glob.glob(os.path.join(inpath, '*.arff'))):
 
     phi = sum(np.minimum(n0,n1))/sum(np.maximum(n0,n1))
     print(filename_short, ", idx:",idf, ", shape:",data.shape, ", #outliers:",sum(labels), ", phi:", phi, ", rho:", rho)
-    #plt.show()
 
