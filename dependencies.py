@@ -25,3 +25,15 @@ def assert_pkgs(pkgs):
 				pkgs_installed = True
 			# add --system parameter as ubuntu sets --user as default, which conflicts with -t
 			subprocess.call([sys.executable, '-m', 'pip', 'install', '--system', '-t', pkg_dir, pkg_name])
+
+def check_pkgs():
+    assert_pkgs({
+        'numpy': 'numpy',
+        'pandas': 'pandas',
+        'scipy': 'scipy',
+        'sklearn': 'scikit-learn',
+        'xStream': 'contrib/xStream.tar.bz2',
+        'pysdo': 'https://github.com/CN-TU/pysdo/archive/master.zip',
+        'dSalmon': 'git+https://github.com/CN-TU/dSalmon',
+    })
+

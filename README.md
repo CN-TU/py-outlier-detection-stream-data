@@ -5,9 +5,9 @@
 
 **contact:** felix.iglesias@tuwien.ac.at
 
-*Dec., 2022*
+*May., 2023*
 
-**Warning!!:** this repository already includes results, logs, figures and tables files as obtained in the original experiments and published in the paper. Executing the scripts below will overwrite such files.
+**Warning!!:** this repository includes results, logs, figures and tables files as obtained in the original experiments and published in the paper. Executing the scripts below will overwrite such files.
 
 ### 0. Preparing datasets
 
@@ -20,19 +20,15 @@ If you have problems obtaining, accessing or processing third-party datasets (i.
 
 ### 1. Replicating experiments
 
-Open a terminal in the current folder. Run:
-
-> $ pyhton3 run_all.py
-
-Files with results and scores are created in the corresponding folders within [tests/]. **Warning!:** *if executed in a common desktop machine this process can take several days. We recommend using high-performance equipment for this task.*
-
-You can run synthetic and real experiments separately:
+Open a terminal and run experiments with synthetic data and real-application data separately:
 
 > $ pyhton3 run_synthetic.py
 
 > $ pyhton3 run_real.py
 
-### 2. 3D scatter plots (Section 3.1 and Section 6.2)
+Files with results and scores are created in the corresponding folders within [tests/]. **Warning!:** *if executed in a common desktop machine this process can take several days. We recommend using high-performance equipment for this task.*
+
+### 2. 3D scatter plots
 
 Open a terminal from [scatterplots/]. Run:
 
@@ -40,7 +36,7 @@ Open a terminal from [scatterplots/]. Run:
 
 Plots used in the paper are generated in the [scatterplots/paper_plots/] folder.
 
-### 3. Boxplots and critical difference diagrams for synthetic datasets (Section 6.1)
+### 3. Boxplots and critical difference diagrams for synthetic datasets
 
 Open a terminal from [statistics/]. Run:
 
@@ -52,7 +48,7 @@ Critical Distance diagrams are adapted from the scripts used in: *Ismail Fawaz, 
 
 and available for Python in: https://github.com/hfawaz/cd-diagram
 
-### 4. Analysis and plots for the 2D-example (Section 6.3)
+### 4. Analysis and plots for the 2D-example
 
 Open a terminal in the current folder. Run:
 
@@ -60,7 +56,7 @@ Open a terminal in the current folder. Run:
 
 Plots used in the paper are generated in the [tests/example/] folder.
 
-### 5. Plots for T-sensitivity experiments with real/application data (Section 6.2)
+### 5. Plots for T-sensitivity experiments with real/application data
 
 Open a terminal from [timeSreal/]. Run:
 
@@ -68,7 +64,7 @@ Open a terminal from [timeSreal/]. Run:
 
 Plots used in the paper are generated in the same folder.
 
-### 6. Extracting phi and rho indices from datasets (Section 6.4)
+### 6. Extracting phi and rho indices from datasets
 
 Open a terminal from [evaldatasets/]. Run:
 

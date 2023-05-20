@@ -36,12 +36,6 @@ for filename in glob.glob(os.path.join(inpath, '*.txt')):
 
 data = list()
 for i, row in dfval.iterrows():
-    #print(','.join(map(str, ['kNN',i,row['kNN']])) ) 
-    #print(','.join(map(str, ['LOF',i,row['LOF']])) ) 
-    #print(','.join(map(str, ['xS',i,row['xS']])) ) 
-    #print(','.join(map(str, ['SDO',i,row['SDO']])) ) 
-    #print(','.join(map(str, ['SDOs',i,row['SDOs']])) ) 
-    #print(','.join(map(str, ['RRCT',i,row['RRCT']])) ) 
     data.append(['kNN',i,row['kNN']]) 
     data.append(['LOF',i,row['LOF']]) 
     data.append(['xS',i,row['xS']]) 
@@ -50,6 +44,7 @@ for i, row in dfval.iterrows():
     data.append(['RRCT',i,row['RRCT']]) 
     data.append(['RSH',i,row['RSH']]) 
     data.append(['LODA',i,row['LODA']]) 
+
 
 dfdiag = pd.DataFrame(data=data, index=None, columns=['classifier_name','dataset_name','accuracy'], dtype=None, copy=False)
 
@@ -65,4 +60,5 @@ outputF = chall[-1]+'_'+metric+'_CDD'
 title=chall[-1]+' (aap)'
 
 import cddiagram
+dfdiag.fillna(0, inplace=True)
 cddiagram.draw_cd_diagram(df_perf=dfdiag, title=title, labels=True, filename=outputF)
