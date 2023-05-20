@@ -23,6 +23,6 @@ mv ../tests/all_synthetic/SUMMARY_rrct_T500.temp ../tests/all_synthetic/SUMMARY_
 bash run_boxplots.sh
 bash run_cddiagrams.sh
 bash run_perf_tables.sh
-mv *.png paper_plots_and_tables
+mv *.pdf paper_plots_and_tables
 mv *.tex paper_plots_and_tables
 
