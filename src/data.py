@@ -7,8 +7,8 @@ from sklearn.preprocessing import MinMaxScaler
 
 def retrieve_data(filename, idf, collection, non_predictors, reverse_class):
 
-    print("Data file (.arff)", filename)
-    print("Data file index: ", idf,"\n")
+    #print("Data file (.arff)", filename)
+    #print("Data file index: ", idf,"\n")
     filename_short = ntpath.basename(filename)
     arffdata = loadarff(filename)
     df_data = pd.DataFrame(arffdata[0])
