@@ -22,7 +22,6 @@ import pysdo
 from src.indices import get_indices
 from xStream import xStream
 from dSalmon import outlier
-from src.streamECOD import sECOD
 
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
